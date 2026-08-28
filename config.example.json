@@ -1,0 +1,38 @@
+{
+  "_comment": "このファイルを config.json にコピーして使います。config.json は自分専用の検索条件です。",
+
+  "interval_minutes": 15,
+  "_interval_comment": "巡回間隔(分)。実際の間隔は .github/workflows/scrape.yml の cron 設定でも変更してください。両方揃える必要があります。",
+
+  "max_items_kept": 500,
+  "_max_items_comment": "docs/data.json に保持する最大件数。古いものから削除されます。",
+
+  "searches": [
+    {
+      "id": "nike-hoodie",
+      "label": "ナイキ パーカー",
+      "sites": ["mercari", "rakuma", "2ndstreet"],
+      "keyword": "ナイキ パーカー",
+      "category": "レディースファッション",
+      "brand": "Nike",
+      "min_price": 1000,
+      "max_price": 8000
+    },
+    {
+      "id": "north-face-jacket",
+      "label": "ノースフェイス ジャケット",
+      "sites": ["mercari", "2ndstreet"],
+      "keyword": "ノースフェイス ジャケット",
+      "category": "メンズファッション",
+      "brand": "THE NORTH FACE",
+      "min_price": 3000,
+      "max_price": 15000
+    }
+  ],
+
+  "notify": {
+    "discord_enabled": true,
+    "notify_only_new": true,
+    "_notify_comment": "searches の各条件に一致した新着アイテムのみ通知します。Discordの実際のWebhook URLはGitHub Secretsに保存し、ここには書きません。"
+  }
+}
